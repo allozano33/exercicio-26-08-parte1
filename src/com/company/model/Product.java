@@ -1,23 +1,28 @@
-package com.company.model;
+package com.praticaintegradora3.model;
+
+import java.util.List;
 
 public class Product {
 
-    String name;
-    Double price;
+    private String nome;
+    private Double price;
 
-
-    public void calcule(Integer quantidadeOfProdutos) {
-        Double tot = this.price*quantidadeOfProdutos;
-        System.out.println(tot);
+    public Product(String nome, Double price) {
+        this.nome = nome;
+        this.price = price;
     }
 
-
-    public String getName() {
-        return name;
+    public Double calcule(Integer quantidadeOfProdutos) {
+        Double total = this.price * quantidadeOfProdutos;
+        return total;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public Double getPrice() {
@@ -28,12 +33,11 @@ public class Product {
         this.price = price;
     }
 
-    public Integer getQuan
-}
-
+    @Override
     public String toString() {
-        return "Pessoa{" +
-                "Nome='" + name + '\''+
-                "'id ='" + price + '\''+
+        return "Product{" +
+                "nome='" + nome + '\'' +
+                ", price=" + price +
                 '}';
-    }}
+    }
+}
